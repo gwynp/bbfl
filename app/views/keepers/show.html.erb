@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First:</strong>
+  <%= @keeper.first %>
+</p>
+
+<p>
+  <strong>Last:</strong>
+  <%= @keeper.last %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @keeper.team %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @keeper.year %>
+</p>
+
+<p>
+  <strong>Keeper year:</strong>
+  <%= @keeper.keeper_year %>
+</p>
+
+<%= link_to 'Edit', edit_keeper_path(@keeper) %> |
+<%= link_to 'Back', keepers_path %>

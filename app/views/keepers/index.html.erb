@@ -1,0 +1,35 @@
+<h1>Listing keepers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Team</th>
+      <th>Year</th>
+      <th>Keeper year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @keepers.each do |keeper| %>
+      <tr>
+        <td><%= keeper.first %></td>
+        <td><%= keeper.last %></td>
+        <td><%= keeper.team %></td>
+        <td><%= keeper.year %></td>
+        <td><%= keeper.keeper_year %></td>
+        <td><%= link_to 'Show', keeper %></td>
+        <td><%= link_to 'Edit', edit_keeper_path(keeper) %></td>
+        <td><%= link_to 'Destroy', keeper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Keeper', new_keeper_path %>

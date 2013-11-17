@@ -1,0 +1,37 @@
+<%= form_for(@keeper) do |f| %>
+  <% if @keeper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@keeper.errors.count, "error") %> prohibited this keeper from being saved:</h2>
+
+      <ul>
+      <% @keeper.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first %><br>
+    <%= f.text_field :first %>
+  </div>
+  <div class="field">
+    <%= f.label :last %><br>
+    <%= f.text_field :last %>
+  </div>
+  <div class="field">
+    <%= f.label :team %><br>
+    <%= f.text_field :team %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :keeper_year %><br>
+    <%= f.number_field :keeper_year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
