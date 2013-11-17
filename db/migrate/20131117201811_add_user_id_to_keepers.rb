@@ -1,0 +1,6 @@
+class AddUserIdToKeepers < ActiveRecord::Migration
+  def change
+    add_column :keepers, :user_id, :integer
+    add_index :keepers, :user_id
+  end
+end

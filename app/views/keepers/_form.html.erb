@@ -11,25 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :first %><br>
-    <%= f.text_field :first %>
+    <%= f.text_field :first, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :last %><br>
-    <%= f.text_field :last %>
+    <%= f.text_field :last, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :team %><br>
-    <%= f.text_field :team %>
+    <%= f.text_field :team, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :year %><br>
-    <%= f.number_field :year %>
-  </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :keeper_year %><br>
-    <%= f.number_field :keeper_year %>
+    <%= f.number_field :keeper_year, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit %>

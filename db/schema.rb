@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131117193213) do
+ActiveRecord::Schema.define(version: 20131117211343) do
 
   create_table "keepers", force: true do |t|
     t.string   "first"
     t.string   "last"
     t.string   "team"
-    t.integer  "year"
+    t.integer  "year",        default: 2013
     t.integer  "keeper_year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "keepers", ["user_id"], name: "index_keepers_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -36,9 +39,11 @@ ActiveRecord::Schema.define(version: 20131117193213) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "franchise"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["franchise"], name: "index_users_on_franchise"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "views", force: true do |t|
