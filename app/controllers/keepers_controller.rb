@@ -3,7 +3,7 @@ class KeepersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @keepers = Keeper.all
+    @keepers = Keeper.where(year: 2013)
   end
 
   def alomar
