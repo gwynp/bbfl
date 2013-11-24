@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'devise', '~> 3.1.1'
 gem "rails_admin", github: "bulleric/rails_admin", branch: "bootstrap2-dependency-patch"
+gem 'simple_form'
+
 group :development, :test do
      gem 'sqlite3'
 end

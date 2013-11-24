@@ -2,6 +2,7 @@ Bbfl::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   get "users/index"
   get "keepers/alomar" => "keepers#alomar"
+  get "keepers/barfield" => "keepers#barfield"
   resources :keepers
 
   devise_for :users

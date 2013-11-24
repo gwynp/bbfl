@@ -12,22 +12,26 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :first %><br>
-    <%= f.text_field :first, class: "form-control" %>
+    <%= f.hidden_field :year,value: 2013 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :first, "First Name"%><br>
+    <%= f.text_field :first, class: "form-control input-lg" %>
   </div>
   <div class="form-group">
-    <%= f.label :last %><br>
-    <%= f.text_field :last, class: "form-control" %>
+    <%= f.label :last, "Last Name" %><br>
+    <%= f.text_field :last, class: "form-control input-lg" %>
   </div>
   <div class="form-group">
-    <%= f.label :team %><br>
-    <%= f.text_field :team, class: "form-control" %>
+    <%= f.label :team, "MLB Team" %><br>
+    <%= f.text_field :team, class: "form-control input-lg", placeholder: 'three letter abbreviation please - e.g. TOR' %>
   </div>
   <div class="form-group">
-    <%= f.label :keeper_year %><br>
-    <%= f.number_field :keeper_year, class: "form-control" %>
+    <%= f.label :keeper_year, "Keeper Year" %><br>
+    <%= f.number_field :keeper_year, placeholder: 1, in: 1...4, class: "form-control input-lg" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-default"%>
   </div>
 <% end %>

@@ -4,5 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :keepers
+  has_many :keepers	
+
+  default_scope :order => "franchise ASC"
 end
