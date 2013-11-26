@@ -3,11 +3,11 @@ class KeepersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @keepers = Keeper.joins(:user).order('users.division')
+    @keepers = Keeper.joins(:user).order('users.division', 'users.franchise')
   end
 
   def alomar
-    @keepers = Keeper.joins(:user).order('users.franchise')
+    @keepers = Keeper.joins(:user).order('users.franchise', 'keeper_year')
   end
 
   def barfield
