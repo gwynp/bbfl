@@ -1,4 +1,6 @@
-<h1>Barfield Keepers List <%= Time.now.year %></h1>
+<div class="page-header">
+  <h1>Barfield Keeper List <%= Time.now.year %> <small><%= @keepers.count %> Keepers submitted.</small></h1>
+</div>
 
 <div class="center">
 <p><%= link_to 'Add A Keeper', new_keeper_path, class: "btn btn-warning btn-lg" %></p>
