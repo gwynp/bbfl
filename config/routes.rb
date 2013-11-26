@@ -3,6 +3,7 @@ Bbfl::Application.routes.draw do
   get "users/index"
   get "keepers/alomar" => "keepers#alomar"
   get "keepers/barfield" => "keepers#barfield"
+  get "keepers/carter" => "keepers#carter"
   resources :keepers
 
   devise_for :users

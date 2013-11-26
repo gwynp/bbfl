@@ -9,13 +9,18 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "BBFL", keepers_path, class: "navbar-brand" %>
+      <%= link_to "Commish", rails_admin_path, class: "nav" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user.try(:admin?) %>
+        <li><%= link_to "Commish", rails_admin_path  %></li>
+        <% end %>
         <li><%= link_to "Alomar", keepers_alomar_path %></li>
         <li><%= link_to "Barfield", keepers_barfield_path %></li>
+        <li><%= link_to "Carter", keepers_carter_path %></li>
         <% if user_signed_in? %>
            <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>

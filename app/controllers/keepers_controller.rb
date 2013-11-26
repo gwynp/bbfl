@@ -12,7 +12,12 @@ class KeepersController < ApplicationController
 
   def barfield
     #@keepers = Keeper.all
-    @keepers = Keeper.all.where(year: Time.now.year ).order("keeper_year DESC")
+    @keepers = Keeper.joins(:user).order('users.franchise', 'keeper_year')
+  end
+
+  def carter
+    #@keepers = Keeper.all
+    @keepers = Keeper.joins(:user).order('users.franchise', 'keeper_year')
   end
 
   def show
