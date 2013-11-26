@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def index
-  	@users = User.find(:all)
+  	@users11 = User.order(:division)
   end
 end

@@ -7,17 +7,15 @@ class KeepersController < ApplicationController
   end
 
   def alomar
-    @keepers = Keeper.joins(:user).order('users.franchise', 'keeper_year')
+    @keepers = Keeper.joins(:user).where("users.division = 'Alomar'").order('users.franchise', 'keeper_year')
   end
 
   def barfield
-    #@keepers = Keeper.all
-    @keepers = Keeper.joins(:user).order('users.franchise', 'keeper_year')
+    @keepers = Keeper.joins(:user).where("users.division = 'Barfield'").order('users.franchise', 'keeper_year')
   end
 
   def carter
-    #@keepers = Keeper.all
-    @keepers = Keeper.joins(:user).order('users.franchise', 'keeper_year')
+    @keepers = Keeper.joins(:user).where("users.division = 'Carter'").order('users.franchise', 'keeper_year')
   end
 
   def show
